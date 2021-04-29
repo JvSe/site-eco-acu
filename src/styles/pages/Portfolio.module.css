@@ -1,0 +1,22 @@
+.container {
+    height: 100vh;
+    display: flex;
+}
+
+.containerRectangle {
+    display: flex;
+    height:100%;
+    flex: 1;
+    align-items: center;
+    justify-content:center;
+}
+
+.containerSlide {
+    display: flex;
+    height: 80%;
+    margin-left: 5rem;
+    flex: 1;
+    align-items:center;
+    justify-content:center;
+    order: -1;
+}
