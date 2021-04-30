@@ -78,16 +78,19 @@
     }
 }
 
-@media (max-width:560px) {
+@media (max-width:425px) {
     .containerRect {
-        width:100%
+        width:100%;
     }
 
     .containerMid {
         flex-direction: column;
-
         .img {
             margin-left: 0rem;
+        }
+
+        .btn {
+            margin-top: 55rem;
         }
     }
 }

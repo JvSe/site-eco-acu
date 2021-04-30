@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import PhotoswipeUIDefault from 'photoswipe/dist/photoswipe-ui-default'
-import { CustomGallery, Item, DefaultLayout } from 'react-photoswipe-gallery'
+import { CustomGallery, DefaultLayout } from 'react-photoswipe-gallery'
 
 const MyGallery = () => {
     const layoutRef = useRef()
