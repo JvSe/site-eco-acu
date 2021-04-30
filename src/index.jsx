@@ -8,7 +8,6 @@ import Contact from './pages/Contact';
 import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
 import NavBar from './components/NavBar';
-import logo from './assets/logoYellow.png';
 
 /**
  * yellow color initial gradient: #D8A72C;

@@ -4,6 +4,8 @@ import Rectangle from '../components/Rectangle';
 import TextTitle from '../components/TextTitle';
 import { useSelector } from 'react-redux';
 
+import SlideShow from '../components/SlideShow';
+
 export default function Portfolio() {
 
     const globalState = useSelector(state=>state);
@@ -24,7 +26,7 @@ export default function Portfolio() {
                 </Rectangle>
             </div>
             <div className={styles.containerSlide}>
-                
+                <SlideShow />
             </div>
         </div>
     )

@@ -1,7 +1,8 @@
 import React from 'react';
 import Rectangle from '../components/Rectangle';
 import styles from '../styles/pages/Home.module.css';
-import imgComputador from '../assets/computador.png';
+import imgComputadorTurismo from '../assets/computadorTurismo.png';
+import imgComputadorGestao from '../assets/computadorGestao.png';
 import Fade from 'react-reveal/Fade';
 
 import { useSelector, useDispatch} from 'react-redux';
@@ -36,20 +37,34 @@ export default function Home() {
     .then(() => window.location.reload());
   }
 
+  const rectLeft = {
+    'left':'-20px',
+    'position':'absolute',
+  }
+
+  const rectRight = {
+    'right':'-20px',
+    'position':'absolute',
+  }
+
   return(
     <div className={styles.container}>
         <div className={styles.containerRect}>
           <Rectangle 
             cor={{'gradient':true,'colorStart':theme.colorStart, 'colorEnd':theme.colorEnd}} 
             width='60%' 
-            left
+            left={theme.type ===  "turismo" ? true : false}
             height='75%' 
-            pos={{'left':'-20px', 'position':'absolute'}}
+            pos={theme.type ===  "turismo" ? rectLeft : rectRight}
           />
         </div>
       <Fade bottom cascade>
         <div className={styles.containerMid}>
-          <img className={styles.img} src={imgComputador} alt="computador representando o sistema"/>
+          {theme.type === "turismo" ? 
+            <img className={styles.img} src={imgComputadorTurismo} alt="computador representando o sistema"/>
+            : 
+            <img className={styles.img} style={{marginLeft:0}} src={imgComputadorGestao} alt="computador representando o sistema"/>
+          }
           <div>
             <button className={styles.btn} type="button" onClick={changeTurismo} > Turismo </button>
             <button className={styles.btn} type="button" onClick={changeGestao} > Gestao </button>
