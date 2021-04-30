@@ -1,31 +1,19 @@
-h1[class*="title"] {
+h1[class*="title"], h2[class*="title"] {
     font-size: 8.5rem;
     letter-spacing:-1rem;
     text-transform: uppercase;
 }
 
-.titleShadows {
-    margin-left: -10px;
-    margin-top: -70px;
-    filter: blur(3px);
-    opacity: .4;
-    color: black;
-}
-
-.title {
+h1 {
     color: transparent;
-    margin-left: -5px;
-    margin-top: 10px; 
     filter:drop-shadow(-10px 5px 5px rgba(0,0,0,.5))
-
 }
 
-.titleOutline {
+h2 {
     color: transparent;
     -webkit-text-stroke-width: 3px;
     -webkit-text-stroke-color: white;
     filter:drop-shadow(-10px 5px 5px rgba(0,0,0,0))
-
 }
 
 

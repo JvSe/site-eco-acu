@@ -3,6 +3,18 @@ import styles from '../styles/components/TextTitle.module.scss';
 
 export default function TextTitle(props) {
     const tela = window.screen.availWidth;
+
+    document.addEventListener("mousemove", parallax);
+    function parallax(e) {
+        this.querySelectorAll('.layer').forEach(layer => {
+            const speed = layer.getAttribute('data-speed')
+    
+            const x = (window.innerWidth - e.pageX*speed)/100
+            const y = (window.innerHeight - e.pageY*speed)/100
+    
+            layer.style.transform = `translateX(${x}px) translateY(${y}px)`
+        })
+    }
     
     var text = props.children;
     var text2 = text.split(' ');
@@ -11,7 +23,7 @@ export default function TextTitle(props) {
             {text2.length > 1 ?
                 tela > 700 ? 
                 <>
-                    <h1 className={styles.title}
+                    <h1 className="title layer"
                         style={
                             props.color.gradient ? 
                             {
@@ -26,7 +38,7 @@ export default function TextTitle(props) {
                             }
                         }
                         data-speed={1}> {text2[0]} </h1>
-                    <h1 className={styles.title}
+                    <h1 className="title layer"
                     style={
                         props.color.gradient ? 
                         {
@@ -40,16 +52,17 @@ export default function TextTitle(props) {
                             color: props.color
                         }
                     }
-                    data-speed={3}
+                    data-speed={1}
                     > 
                         {text2[1]} 
                     </h1>
-                    <h1 className={styles.titleOutline} style={{marginTop:'-180px'}} data-speed={4}> {text2[0]} </h1>
-                    <h1 className={styles.titleOutline}> {text2[1]} </h1>
+                    <h2 className="titleOutline layer" style={{marginTop:'-180px'}} data-speed={0.5}> {text2[0]} </h2>
+                    <h2 className="titleOutline layer"  data-speed={0.5}> {text2[1]} </h2>
                 </> : 
                 <> 
                     <h1 
-                        className={styles.title} 
+                        className="title layer"
+                        data-speed={1}
                         style={
                             props.color.gradient ? 
                             {
@@ -66,12 +79,13 @@ export default function TextTitle(props) {
                     > 
                         {text2[0] + ' ' + text2[1]} 
                     </h1>
-                    <h1 className={styles.titleOutline} style={{marginTop:'-90px'}}> {text2[0] + ' ' + text2[1]} </h1>
+                    <h2 className="titleOutline layer" style={{marginTop:'-90px'}} data-speed={0.5}> {text2[0] + ' ' + text2[1]} </h2>
                     
                 </> :
                 <>
                     <h1 
-                        className={styles.title} 
+                        className="title layer"
+                        data-speed={1}
                         style={
                             props.color.gradient ? 
                             {
@@ -88,7 +102,7 @@ export default function TextTitle(props) {
                     > 
                         {text2[0]} 
                     </h1>
-                    <h1 className={styles.titleOutline} style={{marginTop:'-90px'}}> {text2[0]} </h1>
+                    <h2 className="titleOutline layer" style={{marginTop:'-90px'}} data-speed={0.5}> {text2[0]} </h2>
                 </>
             }
             

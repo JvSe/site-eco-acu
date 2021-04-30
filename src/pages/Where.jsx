@@ -25,10 +25,10 @@ export default function Where() {
             </Rectangle>
 
             <Rectangle 
-                width={window.screen.availWidth < 560 ? false : '40%'}
-                height='40%'
+                width={window.screen.availWidth < 560 ? false : '60%'}
+                height={window.screen.availWidth < 560 ? false : '60%'}
                 cor={'#fff'}
-                pos={{'right':'0px', 'position':'absolute'}}
+                pos={ window.screen.availWidth < 560 ? {'right':'0px', 'position':'absolute'} : {'right':'50px', 'position':'absolute'}}
             > 
                 <MapLocal />
             </Rectangle>

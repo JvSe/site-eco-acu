@@ -53,7 +53,7 @@ export default function Contact() {
             </Rectangle>
             <Rectangle 
                 width={window.screen.availWidth < 560 ? false : '60%'}
-                height='50%'
+                height={window.screen.availWidth < 560 ? '50%' : '70%'}
                 left={true}
                 cor={'#fff'}
                 pos={{'left':'0px', 'position':'absolute'}}
