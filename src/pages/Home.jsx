@@ -1,6 +1,6 @@
 import React from 'react';
 import Rectangle from '../components/Rectangle';
-import styles from '../styles/pages/Home.module.css';
+import styles from '../styles/pages/Home.module.scss';
 import imgComputadorTurismo from '../assets/computadorTurismo.png';
 import imgComputadorGestao from '../assets/computadorGestao.png';
 import Fade from 'react-reveal/Fade';
@@ -52,7 +52,7 @@ export default function Home() {
         <div className={styles.containerRect}>
           <Rectangle 
             cor={{'gradient':true,'colorStart':theme.colorStart, 'colorEnd':theme.colorEnd}} 
-            width='60%' 
+            width={window.screen.availWidth < 560 ? false : '60%'} 
             left={theme.type ===  "turismo" ? true : false}
             height='75%' 
             pos={theme.type ===  "turismo" ? rectLeft : rectRight}

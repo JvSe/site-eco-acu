@@ -38,8 +38,8 @@ div, img, nav, a, span {
         }
 
         @keyframes navbarAnimation {
-            from { border-width:0% }
-            to { border-width:100% }
+            from { border-width: 0% }
+            to { border-width: 100% }
         }
     }
 }
@@ -109,7 +109,7 @@ div, img, nav, a, span {
     }
 }
 
-@media screen and (max-width:1168px) {
+@media (max-width:1168px) {
     .nav {
         .links {
             font-size: 1.5rem;
@@ -117,7 +117,7 @@ div, img, nav, a, span {
     }
 }
 
-@media screen and (max-width:1060px){
+@media (max-width:1060px){
     .nav {
         display: none;
     }
@@ -142,7 +142,7 @@ div, img, nav, a, span {
     
 }
 
-@media screen and (max-width:700px) {
+@media (max-width:700px) {
     .container {
         .img {
             width:30%
@@ -154,7 +154,7 @@ div, img, nav, a, span {
     }
 }
 
-@media screen and (max-width:460px) {
+@media (max-width:460px) {
     .container {
         .img {
             width:40%
@@ -166,10 +166,11 @@ div, img, nav, a, span {
     }
 }
 
-@media screen and (max-width:350px) {
+@media (max-width:350px) {
+    
     .container {
         .img {
-            width:60%
+            width:20%
         }
     }
 
