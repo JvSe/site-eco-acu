@@ -1,4 +1,4 @@
-import React, {useRef'} from 'react';
+import React, { useRef } from 'react';
 import PhotoswipeUIDefault from 'photoswipe/dist/photoswipe-ui-default'
 import { CustomGallery, Item, DefaultLayout } from 'react-photoswipe-gallery'
 
