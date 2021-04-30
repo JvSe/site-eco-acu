@@ -2,7 +2,7 @@ import React from 'react';
 import Forms from '../components/Forms';
 import Rectangle from '../components/Rectangle';
 import TextTitle from '../components/TextTitle';
-import styles from '../styles/pages/Contact.module.css';
+import styles from '../styles/pages/Contact.module.scss';
 import { useSelector } from 'react-redux'
 
 import { 
@@ -23,7 +23,7 @@ export default function Contact() {
         <div className={styles.container}>
             <Rectangle 
                 cor={{'gradient':true,'colorStart':theme.colorStart, 'colorEnd':theme.colorEnd}} 
-                width='45%'
+                width={window.screen.availWidth < 560 ? false :'45%'}
                 left={false}
                 height='80%' 
                 pos={{'right':'-20px', 'position':'absolute'}}
@@ -31,7 +31,7 @@ export default function Contact() {
                 <div className={styles.containerInfos}>
                     <div className={styles.header}>
                         <TextTitle styles={{fontSize:'3rem'}} color={{'gradient':true, 'colorStart':themeText.colorStart, 'colorEnd':themeText.colorEnd}}>Contato</TextTitle>
-                        <h1>[TEXTO PARA ALTERAR]</h1>
+                        
                     </div>
                     <div className={styles.contact}>
                         <div className={styles.infoContact}>
@@ -52,11 +52,11 @@ export default function Contact() {
                 
             </Rectangle>
             <Rectangle 
-                width='60%'
-                height='70%'
-                left
+                width={window.screen.availWidth < 560 ? false : '60%'}
+                height='50%'
+                left={true}
                 cor={'#fff'}
-                pos={{'left':'50px', 'position':'absolute'}}
+                pos={{'left':'0px', 'position':'absolute'}}
             > 
                 <Forms />
             </Rectangle>

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles/pages/Portfolio.module.css';
+import styles from '../styles/pages/Portfolio.module.scss';
 import Rectangle from '../components/Rectangle';
 import TextTitle from '../components/TextTitle';
 import { useSelector } from 'react-redux';
@@ -17,12 +17,14 @@ export default function Portfolio() {
             <div className={styles.containerRectangle}>
                 <Rectangle 
                     cor={{'gradient':true,'colorStart':theme.colorStart, 'colorEnd':theme.colorEnd}} 
-                    width='45%'
+                    width={window.screen.availWidth < 560 ? false :'45%'}
                     left={false}
                     height='80%' 
                     pos={{'right':'-20px', 'position':'absolute'}}
                 >
-                    <TextTitle color={{'gradient':true, 'colorStart':themeText.colorStart, 'colorEnd':themeText.colorEnd}}>Portfólio</TextTitle>
+                    <div className={styles.textTitle}>
+                        <TextTitle color={{'gradient':true, 'colorStart':themeText.colorStart, 'colorEnd':themeText.colorEnd}}>Portfólio</TextTitle>
+                    </div>
                 </Rectangle>
             </div>
             <div className={styles.containerSlide}>

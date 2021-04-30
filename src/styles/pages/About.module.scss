@@ -1,0 +1,51 @@
+.container {
+    height: 100vh;
+    display: flex;
+}
+
+.containerRectangle {
+    height: 100%;
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.containerText {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    font-size: 2.5rem;
+
+    text-align: justify;
+}
+
+.text {
+    width: 70%;
+    color: #2d3a6a;
+}
+
+@media screen and (max-width:350px) {
+    .containerRectangle {
+        justify-content: center;
+
+        .textTitle {
+            align-self: flex-start;
+            margin-top: 2rem;
+        }
+    }
+
+    .containerText {
+        z-index: 100;
+        margin-left: -22rem;
+        margin-right: 5rem;
+
+        .text {
+            color: #fff;
+            width: 100%;
+            font-size: 1.5rem;
+        }
+    }
+}

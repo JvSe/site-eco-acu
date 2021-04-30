@@ -49,3 +49,24 @@
     
 }
 
+@media screen and (max-width:350px) {
+    .container {
+        justify-content: center;
+
+        .containerInfos {
+            .header {
+                align-self: flex-start;
+                margin-top: -45rem;
+            }
+
+            .contact {
+                display: none;
+            }
+
+            .footer {
+                display: none;
+            }
+        }
+        
+    }
+}

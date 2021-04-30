@@ -30,7 +30,7 @@ ReactDOM.render(
                     [
                         {
                             component: Home,
-                            nome: 'Inicio',
+                            nome: 'Início',
                             id: 'home'
                         },
                         {
@@ -40,7 +40,7 @@ ReactDOM.render(
                         },
                         {
                             component: Portfolio,
-                            nome: 'Portfolio',
+                            nome: 'Portfólio',
                             id: 'portfolio'
                         },
                         {

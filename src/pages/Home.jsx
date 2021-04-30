@@ -67,7 +67,7 @@ export default function Home() {
           }
           <div>
             <button className={styles.btn} type="button" onClick={changeTurismo} > Turismo </button>
-            <button className={styles.btn} type="button" onClick={changeGestao} > Gestao </button>
+            <button className={styles.btn} type="button" onClick={changeGestao} > Gestão </button>
           </div>
         </div>
       </Fade>

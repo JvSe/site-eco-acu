@@ -23,3 +23,15 @@
     justify-content:center;
     order: -1;
 }
+
+@media screen and (max-width:350px) {
+    .containerRectangle {
+        justify-content: center;
+
+        .textTitle {
+            align-self: flex-start;
+            margin-top: 2rem;
+        }
+    
+    }
+}
