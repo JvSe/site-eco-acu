@@ -5,7 +5,9 @@ import '../styles/components/Forms.module.scss';
 export default function Forms() {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        window.open(`mailto:atendimento.ecoacu@gmail.com?body=${data.nome} || ${data.email} || ${data.mensagem}`)
+    };
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} >

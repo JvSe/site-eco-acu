@@ -26,7 +26,7 @@ export default function Where() {
 
             <Rectangle 
                 width={window.screen.availWidth < 560 ? false : '60%'}
-                height={window.screen.availWidth < 560 ? false : '60%'}
+                height={window.screen.availWidth < 560 ? '50%' : '60%'}
                 cor={'#fff'}
                 pos={ window.screen.availWidth < 560 ? {'right':'0px', 'position':'absolute'} : {'right':'50px', 'position':'absolute'}}
             > 

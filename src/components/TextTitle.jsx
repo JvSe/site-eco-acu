@@ -18,6 +18,8 @@ export default function TextTitle(props) {
     
     var text = props.children;
     var text2 = text.split(' ');
+    var text3 = "";
+    text3.concat(text2[0], text2[1]);
     return (
         <div style={props.styles}>
             {text2.length > 1 ?
@@ -56,8 +58,6 @@ export default function TextTitle(props) {
                     > 
                         {text2[1]} 
                     </h1>
-                    <h2 className="titleOutline layer" style={{marginTop:'-180px'}} data-speed={0.5}> {text2[0]} </h2>
-                    <h2 className="titleOutline layer"  data-speed={0.5}> {text2[1]} </h2>
                 </> : 
                 <> 
                     <h1 
@@ -79,7 +79,6 @@ export default function TextTitle(props) {
                     > 
                         {text2[0] + ' ' + text2[1]} 
                     </h1>
-                    <h2 className="titleOutline layer" style={{marginTop:'-90px'}} data-speed={0.5}> {text2[0] + ' ' + text2[1]} </h2>
                     
                 </> :
                 <>
@@ -102,7 +101,6 @@ export default function TextTitle(props) {
                     > 
                         {text2[0]} 
                     </h1>
-                    <h2 className="titleOutline layer" style={{marginTop:'-90px'}} data-speed={0.5}> {text2[0]} </h2>
                 </>
             }
             

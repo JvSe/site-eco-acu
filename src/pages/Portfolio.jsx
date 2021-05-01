@@ -3,7 +3,6 @@ import styles from '../styles/pages/Portfolio.module.scss';
 import Rectangle from '../components/Rectangle';
 import TextTitle from '../components/TextTitle';
 import { useSelector } from 'react-redux';
-
 import SlideShow from '../components/SlideShow';
 
 export default function Portfolio() {
