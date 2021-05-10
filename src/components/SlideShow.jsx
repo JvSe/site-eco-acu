@@ -1,57 +1,48 @@
 import React, {useState, useCallback} from 'react';
 import Gallery from 'react-photo-gallery';
 import Carousel, { Modal, ModalGateway } from "react-images";
-import styles from '../styles/components/SlideShow.module.scss'
+import styles from '../styles/components/SlideShow.module.scss';
+import Fade from 'react-reveal/Fade';
+
+import img1 from '../assets/img/1.jpeg';
+import img2 from '../assets/img/2.jpeg';
+import img3 from '../assets/img/3.jpeg';
+import img4 from '../assets/img/4.jpeg';
+import img5 from '../assets/img/5.jpeg';
+import img6 from '../assets/img/6.jpeg';
 
 const photos = [
   {
-    src: 'https://i.pinimg.com/originals/fd/8f/8d/fd8f8da060afe72035e078e5fe661452.png',
-    width: 4,
-    height: 3
+    src: img1,
+    width: 3,
+    height: 2
   },
   {
-    src: 'https://wallpapercave.com/wp/wp1933957.png',
-    width: 2,
-    height: 1
+    src: img2,
+    width: 3,
+    height: 2
   },
   {
-    src: 'https://i.pinimg.com/originals/fd/8f/8d/fd8f8da060afe72035e078e5fe661452.png',
-    width: 4,
-    height: 3
+    src: img3,
+    width: 3,
+    height: 2
   },
   {
-    src: 'https://wallpapercave.com/wp/wp1933957.png',
-    width: 2,
-    height: 1
+    src: img4,
+    width: 3,
+    height: 2
   },
   {
-    src: 'https://i.pinimg.com/originals/fd/8f/8d/fd8f8da060afe72035e078e5fe661452.png',
-    width: 4,
-    height: 3
+    src: img5,
+    width: 3,
+    height: 2
   },
   {
-    src: 'https://wallpapercave.com/wp/wp1933957.png',
-    width: 2,
-    height: 1
-  },
-  {
-    src: 'https://i.pinimg.com/originals/fd/8f/8d/fd8f8da060afe72035e078e5fe661452.png',
-    width: 4,
-    height: 3
-  },
-  {
-    src: 'https://wallpapercave.com/wp/wp1933957.png',
-    width: 2,
-    height: 1
+    src: img6,
+    width: 3,
+    height: 2
   },
 ];
-
-const customStyles = {
-  view: () => ({
-    // none of react-images styles are passed to <View />
-    zIndex: 1000000
-  }),
-}
 
 
 export default function SlideShow() {
@@ -70,22 +61,24 @@ export default function SlideShow() {
   };
   
   return(
-    <div className={styles.containerSlide}>
-      <Gallery photos={photos} onClick={openLightbox}/>
-      <ModalGateway>
-        {viewerIsOpen ? (
-          <Modal onClose={closeLightbox}>
-            <Carousel
-              currentIndex={currentImage}
-              views={photos.map(x => ({
-                ...x,
-                srcset: x.srcSet,
-                caption: x.title
-              }))}
-            />
-          </Modal>
-        ) : null}
-      </ModalGateway>
-    </div>
+    <Fade left>
+      <div className={styles.containerSlide}>
+        <Gallery photos={photos} onClick={openLightbox}/>
+        <ModalGateway>
+          {viewerIsOpen ? (
+            <Modal onClose={closeLightbox}>
+              <Carousel
+                currentIndex={currentImage}
+                views={photos.map(x => ({
+                  ...x,
+                  srcset: x.srcSet,
+                  caption: x.title
+                }))}
+              />
+            </Modal>
+          ) : null}
+        </ModalGateway>
+      </div>
+    </Fade>
   )
 }

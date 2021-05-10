@@ -21,7 +21,7 @@ export default function TextTitle(props) {
     var text3 = "";
     text3.concat(text2[0], text2[1]);
     return (
-        <div style={props.styles}>
+        <div className={styles.containerTitle}>
             {text2.length > 1 ?
                 tela > 700 ? 
                 <>
