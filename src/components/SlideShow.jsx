@@ -1,96 +1,91 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Timeline from '@material-ui/lab/Timeline';
-import TimelineItem from '@material-ui/lab/TimelineItem';
-import TimelineSeparator from '@material-ui/lab/TimelineSeparator';
-import TimelineConnector from '@material-ui/lab/TimelineConnector';
-import TimelineContent from '@material-ui/lab/TimelineContent';
-import TimelineOppositeContent from '@material-ui/lab/TimelineOppositeContent';
-import TimelineDot from '@material-ui/lab/TimelineDot';
-import FastfoodIcon from '@material-ui/icons/Fastfood';
-import LaptopMacIcon from '@material-ui/icons/LaptopMac';
-import HotelIcon from '@material-ui/icons/Hotel';
-import RepeatIcon from '@material-ui/icons/Repeat';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
+import React, {useState, useCallback} from 'react';
+import Gallery from 'react-photo-gallery';
+import Carousel, { Modal, ModalGateway } from "react-images";
+import styles from '../styles/components/SlideShow.module.scss'
 
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    padding: '6px 16px',
+const photos = [
+  {
+    src: 'https://i.pinimg.com/originals/fd/8f/8d/fd8f8da060afe72035e078e5fe661452.png',
+    width: 4,
+    height: 3
   },
-  secondaryTail: {
-    backgroundColor: theme.palette.secondary.main,
+  {
+    src: 'https://wallpapercave.com/wp/wp1933957.png',
+    width: 2,
+    height: 1
   },
-}));
+  {
+    src: 'https://i.pinimg.com/originals/fd/8f/8d/fd8f8da060afe72035e078e5fe661452.png',
+    width: 4,
+    height: 3
+  },
+  {
+    src: 'https://wallpapercave.com/wp/wp1933957.png',
+    width: 2,
+    height: 1
+  },
+  {
+    src: 'https://i.pinimg.com/originals/fd/8f/8d/fd8f8da060afe72035e078e5fe661452.png',
+    width: 4,
+    height: 3
+  },
+  {
+    src: 'https://wallpapercave.com/wp/wp1933957.png',
+    width: 2,
+    height: 1
+  },
+  {
+    src: 'https://i.pinimg.com/originals/fd/8f/8d/fd8f8da060afe72035e078e5fe661452.png',
+    width: 4,
+    height: 3
+  },
+  {
+    src: 'https://wallpapercave.com/wp/wp1933957.png',
+    width: 2,
+    height: 1
+  },
+];
 
-export default function CustomizedTimeline() {
-  const classes = useStyles();
+const customStyles = {
+  view: () => ({
+    // none of react-images styles are passed to <View />
+    zIndex: 1000000
+  }),
+}
 
-  return (
-    <Timeline align="right">
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineDot>
-            <FastfoodIcon />
-          </TimelineDot>
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent>
-          <Paper elevation={3} className={classes.paper}>
-            <Typography variant="h1" component="h1">
-              Eat
-            </Typography>
-            <Typography>Because you need strength</Typography>
-          </Paper>
-        </TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineDot color="primary">
-            <LaptopMacIcon />
-          </TimelineDot>
-          <TimelineConnector />
-        </TimelineSeparator>
-        <TimelineContent>
-          <Paper elevation={3} className={classes.paper}>
-            <Typography variant="h6" component="h1">
-              Code
-            </Typography>
-            <Typography>Because it&apos;s awesome!</Typography>
-          </Paper>
-        </TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineDot color="primary" variant="outlined">
-            <HotelIcon />
-          </TimelineDot>
-          <TimelineConnector className={classes.secondaryTail} />
-        </TimelineSeparator>
-        <TimelineContent>
-          <Paper elevation={3} className={classes.paper}>
-            <Typography variant="h6" component="h1">
-              Sleep
-            </Typography>
-            <Typography>Because you need rest</Typography>
-          </Paper>
-        </TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineDot color="secondary">
-            <RepeatIcon />
-          </TimelineDot>
-        </TimelineSeparator>
-        <TimelineContent>
-          <Paper elevation={3} className={classes.paper}>
-            <Typography variant="h6" component="h1">
-              Repeat
-            </Typography>
-            <Typography>Because this is the life you love!</Typography>
-          </Paper>
-        </TimelineContent>
-      </TimelineItem>
-    </Timeline>
-  );
+
+export default function SlideShow() {
+  
+  const [currentImage, setCurrentImage] = useState(0);
+  const [viewerIsOpen, setViewerIsOpen] = useState(false);
+
+  const openLightbox = useCallback((event, { photo, index }) => {
+    setCurrentImage(index);
+    setViewerIsOpen(true);
+  }, []);
+
+  const closeLightbox = () => {
+    setCurrentImage(0);
+    setViewerIsOpen(false);
+  };
+  
+  return(
+    <div className={styles.containerSlide}>
+      <Gallery photos={photos} onClick={openLightbox}/>
+      <ModalGateway>
+        {viewerIsOpen ? (
+          <Modal onClose={closeLightbox}>
+            <Carousel
+              currentIndex={currentImage}
+              views={photos.map(x => ({
+                ...x,
+                srcset: x.srcSet,
+                caption: x.title
+              }))}
+            />
+          </Modal>
+        ) : null}
+      </ModalGateway>
+    </div>
+  )
 }

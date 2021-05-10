@@ -1,7 +1,7 @@
 import  React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { Icon } from 'leaflet';
-import logoIcon from '../assets/iconMarker.png'
+import logoIcon from '../assets/icons/iconMarker.png'
 
 export default function MapLocal() {
     const local = new Icon({
