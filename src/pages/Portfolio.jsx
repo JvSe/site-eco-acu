@@ -3,7 +3,17 @@ import styles from '../styles/pages/Portfolio.module.scss';
 import Rectangle from '../components/Rectangle';
 import TextTitle from '../components/TextTitle';
 import { useSelector } from 'react-redux';
-import SlideShow from '../components/SlideShow';
+
+import AwesomeSlider from 'react-awesome-slider';
+import AwesomeSliderStyles from 'react-awesome-slider/src/styles';
+
+import img1 from '../assets/img/1.jpeg';
+import img2 from '../assets/img/2.jpeg';
+import img3 from '../assets/img/3.jpeg';
+import img4 from '../assets/img/4.jpeg';
+import img5 from '../assets/img/5.jpeg';
+import img6 from '../assets/img/6.jpeg';
+
 
 export default function Portfolio() {
 
@@ -26,9 +36,37 @@ export default function Portfolio() {
                     </div>
                 </Rectangle>
             </div>
-            <div className={styles.containerSlide}>
-                <SlideShow />
-            </div>
+            <Rectangle 
+                width={window.screen.availWidth < 560 ? false : '60%'}
+                height={window.screen.availWidth < 560 ? '50%' : '70%'}
+                left={true}
+                cor={'#fff'}
+                pos={{'left':'0px', 'position':'absolute'}}
+                style={{overflow:'hidden'}}
+            > 
+
+
+                {theme === 'turismo' ? 
+                    <AwesomeSlider cssModule={AwesomeSliderStyles}>
+                        <div data-src={img1} />
+                        <div data-src={img2} />
+                        <div data-src={img3} />
+                        <div data-src={img4} />
+                        <div data-src={img5} />
+                        <div data-src={img6} />
+                    </AwesomeSlider>
+                :
+                    <AwesomeSlider cssModule={AwesomeSliderStyles}>
+                        <div data-src={img1} />
+                        <div data-src={img1} />
+                        <div data-src={img1} />
+                        <div data-src={img1} />
+                        <div data-src={img1} />
+                        <div data-src={img1} />
+                    </AwesomeSlider>
+                }
+                
+            </Rectangle>
         </div>
     )
 }

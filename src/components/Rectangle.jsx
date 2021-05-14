@@ -14,6 +14,7 @@ export default function Rectangle( props ) {
                 className={styles.container} 
                 style={
                     {
+                        ...props.style,
                         display:'flex',
                         alignItems:'center',
                         justifyContent:'center',

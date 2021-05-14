@@ -43,6 +43,7 @@ export default function NavBar(props) {
         }
     }
 
+
     return (
         <>
             <div id="nav" className={styles.container}>
@@ -62,18 +63,18 @@ export default function NavBar(props) {
                 </div>
             </div>
 
-            <div id="menu" className={styles.containerMenuHamburger}>
-                <div>
-                    {props.linksNav.map((link, index) => {
-                        return (
-                            <li key={index} >
-                                <a id={`title${index}`} onClick={menuToggle} href={`#${link.id}`}>{link.nome}</a>
-                            </li>
-                        )
-                    })}
+                <div id="menu" className={styles.containerMenuHamburger}>
+                    <div>
+                        {props.linksNav.map((link, index) => {
+                            return (
+                                <li key={index} >
+                                    <a id={`title${index}`} onClick={menuToggle} href={`#${link.id}`}>{link.nome}</a>
+                                </li>
+                            )
+                        })}
+                    </div>
+                    
                 </div>
-                
-            </div>
             
         </>
     )

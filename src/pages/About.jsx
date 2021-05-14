@@ -11,9 +11,7 @@ export default function About() {
 
     return(
         <div className={styles.container}>
-            
             <div className={styles.containerRectangle}>
-                
                 <Rectangle 
                     cor={{'gradient':true,'colorStart':theme.colorStart, 'colorEnd':theme.colorEnd}} 
                     width={window.screen.availWidth < 560 ? false :'45%'}

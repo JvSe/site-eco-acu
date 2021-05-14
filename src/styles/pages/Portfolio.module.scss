@@ -24,6 +24,22 @@
     order: -1;
 }
 
+@media screen and (max-width:425px) {
+    .containerRectangle {
+        justify-content: center;
+
+        .textTitle {
+            align-self: flex-start;
+            margin-top: 2rem;
+        }
+    }
+
+    .containerSlide {
+        justify-content:center;
+        margin-left: 15rem;
+    }
+}
+
 @media screen and (max-width:350px) {
     .containerRectangle {
         justify-content: center;
@@ -32,6 +48,12 @@
             align-self: flex-start;
             margin-top: 2rem;
         }
-    
+    }
+
+    .container {
+        .containerSlide {
+            z-index: 30;
+            width: 100%;
+        }
     }
 }

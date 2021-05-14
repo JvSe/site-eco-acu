@@ -35,7 +35,7 @@
 @media (max-width:350px) {
     .containerTitle h1[class*="title"], h2[class*="title"] {
         font-size: 3rem;
-        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-width: .1px;
         letter-spacing: -0.3rem;
     }
 }
