@@ -24,6 +24,8 @@ export default function Portfolio() {
     var theme = globalState.theme;
     var themeText = globalState.themeText;
 
+    console.log(theme);
+
     return(
         <div className={styles.container}>
             <div className={styles.containerRectangle}>
@@ -49,7 +51,7 @@ export default function Portfolio() {
             > 
 
 
-                {theme === 'turismo' ? 
+                {theme.type !== 'turismo' ? 
                     <AwesomeSlider cssModule={AwesomeSliderStyles}>
                         <div data-src={img1} />
                         <div data-src={img2} />
