@@ -14,6 +14,9 @@ import img4 from '../assets/img/4.jpeg';
 import img5 from '../assets/img/5.jpeg';
 import img6 from '../assets/img/6.jpeg';
 
+import imgTurismo1 from '../assets/img/turismo1.png'
+import imgTurismo2 from '../assets/img/turismo2.png'
+
 
 export default function Portfolio() {
 
@@ -57,12 +60,8 @@ export default function Portfolio() {
                     </AwesomeSlider>
                 :
                     <AwesomeSlider cssModule={AwesomeSliderStyles}>
-                        <div data-src={img1} />
-                        <div data-src={img1} />
-                        <div data-src={img1} />
-                        <div data-src={img1} />
-                        <div data-src={img1} />
-                        <div data-src={img1} />
+                        <div data-src={imgTurismo1} />
+                        <div data-src={imgTurismo2} />
                     </AwesomeSlider>
                 }
                 
