@@ -6,6 +6,7 @@ import Where from './Where';
 import Contact from './Contact';
 import Home from './Home';
 import Portfolio from './Portfolio';
+import Footer from './Footer';
 
 /**
     import GenerateRect from '../components/genaratedRec/index';
@@ -33,6 +34,9 @@ export default function Main() {
             </div>
             <div id="contact">
                 <Contact />
+            </div>
+            <div>
+                <Footer />
             </div>
         </div>
     )
