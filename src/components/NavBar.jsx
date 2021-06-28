@@ -5,6 +5,8 @@ import { useSelector } from 'react-redux';
 import imgYellow from '../assets/logoYellow.png';
 import imgBlue from '../assets/logoBlue.png';
 
+import imgPadrao from '../assets/logoPadrao.png';
+
 export default function NavBar(props) {
     const [menuPressed, setMenu] = useState(false);
     const globalState = useSelector(state => state);
@@ -47,7 +49,7 @@ export default function NavBar(props) {
     return (
         <>
             <div id="nav" className={styles.container}>
-                <img id="img" className={styles.img} src={theme.type === 'turismo' ? imgYellow : imgBlue} alt="Logo navegação home"/>
+                <img id="img" className={styles.img} src={imgPadrao} alt="Logo navegação home"/>
                 <nav className={styles.nav}>
                     {props.linksNav.map((link, index) => {
                         return (

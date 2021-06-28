@@ -7,7 +7,7 @@
     justify-content: center;
 
 
-    div {
+    .containerRectangle {
         height: 100%;
         width: 70%;
         background-color: blue;
@@ -18,5 +18,25 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    p {
+        color: white;
+        transition:.1s linear;
+        cursor: pointer;
+
+        &:hover {
+            color:#D8A72C
+        }
+    }
+
+    .containerWhats {
+        display: flex;
+        align-items:center;
+        flex-direction:column;
+
+        &:hover {
+            color: #D8A72C;
+        }
     }
 }

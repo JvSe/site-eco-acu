@@ -14,6 +14,60 @@
     justify-content:center;
 }
 
+.containerRectangleTwo {
+    display: flex;
+    height:100%;
+    flex: 1;
+    align-items: center;
+    justify-content:center;
+    flex-direction: column;
+
+    .textTitle {
+        margin-top: 5rem;
+    }
+
+    .gridPort {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
+        grid-gap: 1rem;
+
+        align-items: center;
+        justify-content:center;
+
+        width: 90%;
+
+        a {
+            display:flex;
+            align-items: center;
+            justify-content:center;
+
+            
+
+            img {
+                width: 70%;
+                height: 100%;
+
+                transition: .2s linear;
+
+                &:hover {
+                    transform:scale(1.1)
+                }
+            }
+        }
+    }
+}
+
+.containerVantagens {
+    display: flex;
+    color: #2d3a6a;
+
+    p {
+        margin-left: 1rem;
+        font-size: 1.6rem;
+
+    }
+}
+
 .containerSlide {
     height: 80%;
     width: 100%;

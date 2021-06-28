@@ -63,7 +63,7 @@ export default function Home() {
           {theme.type === "turismo" ? 
             <img className={styles.img} src={imgComputadorTurismo} alt="computador representando o sistema"/>
             : 
-            <img className={styles.img} style={{marginLeft:0}} src={imgComputadorGestao} alt="computador representando o sistema"/>
+            <img className={styles.img} style={{marginLeft:0, marginRight:'55rem'}} src={imgComputadorGestao} alt="computador representando o sistema"/>
           }
           <div>
             <button className={styles.btn} type="button" onClick={changeTurismo} > Turismo </button>

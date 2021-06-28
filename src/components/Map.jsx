@@ -18,9 +18,6 @@ export default function MapLocal() {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
             <Marker position={position} icon={local}>
-                <Popup>
-                    [ADICIONAR UM TEXTO AQUI, CASO QUEIRA]
-                </Popup>
             </Marker>
         </MapContainer>
     )

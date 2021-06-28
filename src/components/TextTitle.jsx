@@ -33,11 +33,14 @@ export default function TextTitle(props) {
                                 background: `linear-gradient(145deg, ${props.color.colorStart}, ${props.color.colorEnd})`,
                                 WebkitBackgroundClip: 'text',
                                 color: props.color ? props.color : 'inherit',
+                                fontSize: props.fontSize
                             } :
 
                             {
-                                color: props.color
+                                color: props.color,
+                                fontSize: props.fontSize
                             }
+                            
                         }
                         data-speed={1}> {text2[0]} </h1>
                     <h1 className="title layer"
@@ -48,10 +51,12 @@ export default function TextTitle(props) {
                             background: `linear-gradient(145deg, ${props.color.colorStart}, ${props.color.colorEnd})`,
                             WebkitBackgroundClip: 'text',
                             color: props.color ? props.color : 'inherit',
+                            fontSize: props.fontSize
                         } :
 
                         {
-                            color: props.color
+                            color: props.color,
+                            fontSize: props.fontSize
                         }
                     }
                     data-speed={1}
@@ -70,10 +75,12 @@ export default function TextTitle(props) {
                                 background: `linear-gradient(145deg, ${props.color.colorStart}, ${props.color.colorEnd})`,
                                 WebkitBackgroundClip: 'text',
                                 color: props.color ? props.color : 'inherit',
+                                fontSize: props.fontSize
                             } :
 
                             {
-                                color: props.color
+                                color: props.color,
+                                fontSize: props.fontSize
                             }
                         }
                     > 
@@ -92,10 +99,12 @@ export default function TextTitle(props) {
                                 background: `linear-gradient(145deg, ${props.color.colorStart}, ${props.color.colorEnd})`,
                                 WebkitBackgroundClip: 'text',
                                 color: props.color ? props.color : 'inherit',
+                                fontSize: props.fontSize
                             } :
 
                             {
-                                color: props.color
+                                color: props.color,
+                                fontSize: props.fontSize
                             }
                         }
                     > 
